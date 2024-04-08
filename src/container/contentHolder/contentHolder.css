@@ -1,0 +1,54 @@
+.content_container {
+    margin: 2rem;
+}
+
+.content_container-flexBox {
+    display: flex;
+
+}
+
+.skills-container {
+    margin: 1rem;
+    width: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: fit-content;
+}
+
+.company_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company_content>p {
+    padding: .75rem 0;
+}
+
+@media only screen and (max-width: 620px) {
+
+    .company_content>div {
+        display: flex;
+    }
+
+    .company_content>p {
+        text-align: justify;
+    }
+
+
+    .content_container-flexBox {
+        align-items: center;
+        flex-direction: column;
+
+    }
+
+    .skills-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .content_container {
+        margin: 1rem;
+    }
+}

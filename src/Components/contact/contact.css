@@ -1,0 +1,95 @@
+.contact-container-flexBox {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+    align-items: center;
+    z-index: 100;
+    position: relative;
+}
+
+.contact-container-flexBox input,
+textarea,
+button {
+    margin: 1rem 1.5rem;
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 0.1px solid #0c152459;
+    background: #EBEEF2;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.contact-mail-sendbutton {
+    margin: 1rem 1.5rem;
+    padding: 0.5rem;
+    border-radius: 7px;
+    border: 0.1px solid #0c152459;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: #505960;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-mail-flexbox {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-socials-flexbox {
+    justify-content: space-evenly;
+    width: -webkit-fill-available;
+    display: flex;
+}
+
+.contact-socials-flexbox img {
+    width: 5rem;
+}
+
+.contact-socials-in {
+    width: 75px;
+    height: 75px;
+    border-radius: 20px;
+    font-size: 71px;
+    font-weight: bold;
+    display: flex;
+    color: white;
+    vertical-align: middle;
+    background: #0C1524;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-socials-holder svg {
+    height: 50px;
+}
+
+@media only screen and (max-width: 620px) {
+    .contact-container-flexBox {
+        flex-direction: column;
+    }
+
+    .contact-mail-flexbox {
+        align-items: center;
+    }
+
+    .contact-socials-flexbox {
+        margin: 1rem 0;
+        align-items: center;
+    }
+
+
+    .contact-socials-holder svg {
+        height: 35px;
+    }
+
+
+    .contact-socials-in {
+        width: 35px;
+        height: 35px;
+        font-size: 30px;
+        border-radius: 5px;
+    }
+
+
+}

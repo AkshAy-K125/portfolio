@@ -1,0 +1,1 @@
+export { default as ContentHolder } from './contentHolder/ContentHolder';
