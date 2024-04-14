@@ -5,6 +5,10 @@ const Navbar = () => {
 
   const [sidePanel, setSidePanel] = useState(false)
 
+  const resumeDownload = () => {
+    window.open('https://drive.google.com/file/d/1QLzp7rFL_cVMGrPd06gynuB0oQS7y8et/view?usp=sharing')
+  }
+
   return (
     <>
       <div className='nav_Container'>
@@ -13,6 +17,7 @@ const Navbar = () => {
             <li className='hover-underline-animation'><a href="#home">Home</a></li>
             <li className='hover-underline-animation'><a href="#About">About</a></li>
             <li className='hover-underline-animation'><a href="#contact">Contact</a></li>
+            <li className='hover-underline-animation'><a href="#home" onClick={resumeDownload}>Resume</a></li>
           </ul>
         </div>
       </div>

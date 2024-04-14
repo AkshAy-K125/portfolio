@@ -100,7 +100,7 @@ const data = {
             Managing critical data and databases; <b>developing, deploying, and maintaining</b> in-house <b>Web App</b> based systems, and migrating hard data to digital environments
             </p>
             <p> 
-            Worked with various data tools, platforms, and languages, such as <b>Python, SQL, Spark, AWS, and Azure</b> 
+            Worked with various data tools, platforms, and languages, such as <b>Python, SQL, Spark, AWS Architecture</b> 
             </p>
             <p>
             Successfully managed customer interactions and worked on decisive delegations. Some of my data projects include building a data pipeline for a real estate company, creating a dashboard for a healthcare provider, and optimizing a recommend-er system for an e-commerce platform. 
