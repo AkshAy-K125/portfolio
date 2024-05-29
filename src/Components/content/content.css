@@ -31,7 +31,7 @@
 } */
 
 .company_header {
-    font-size: 26px;
+    font-size: 2rem;
     font-weight: bold;
     color: #0D1D2C;
     font-variant: petite-caps;
@@ -70,9 +70,14 @@
         height: 5rem;
     }
 
-    .company_header,
+    .company_header {
+        font-size: 5vw;
+        text-align: center;
+    }
+
     .company_timeframe,
     .company_place_of_work {
+        font-size: 3vw;
         text-align: center;
     }
 }

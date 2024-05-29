@@ -23,6 +23,7 @@
 }
 
 .company_content>p {
+    font-size: 1rem;
     padding: .75rem 0;
 }
 
@@ -33,6 +34,7 @@
     }
 
     .company_content>p {
+        font-size: 3vw;
         text-align: justify;
     }
 

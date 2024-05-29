@@ -13,8 +13,8 @@
 .tumbnailDiv {
     display: flex;
     justify-content: center;
-    box-shadow: 0 4px 4px 0 #00000040;
     margin: 1rem;
+    background-color: #ffffff00;
 }
 
 .tumbnailDiv a {
@@ -23,12 +23,18 @@
 }
 
 .tumbnailDiv img {
+    box-shadow: 0 4px 4px 0 #00000040;
     width: 15rem;
 }
 
 .mainDetails>div {
     text-align: center;
-    margin: 1rem;
+    font-size: 1rem;
+    margin: 0.25rem;
+}
+
+.mainDetails>div>p {
+    text-align: justify;
 }
 
 .mainDetails h4 {
@@ -44,6 +50,10 @@
 
 @media only screen and (max-width: 620px) {
 
+    .mainDetails>div {
+        font-size: 3vw;
+    }
+
     .projMainContainer {
         height: fit-content;
         flex-direction: column;
@@ -57,12 +67,12 @@
     }
 
     .mainDetails h4 {
-        font-size: 26px;
+        font-size: 5vw;
     }
 
-    .stackImages img {
-        width: 5rem;
-        height: 2rem;
+    .stackImages img,
+    .videoSourceContainer img {
+        height: 1rem;
     }
 
 }
