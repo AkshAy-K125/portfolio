@@ -1,28 +1,20 @@
 const data = {
     skills: {
+        c: {
+            name: "c",
+            home_page_link: "https://en.wikipedia.org/wiki/C_(programming_language)",
+        },
+        cplus: {
+            name: "cplus",
+            home_page_link: "https://en.wikipedia.org/wiki/C%2B%2B",
+        },
         python: {
             name: "python",
             home_page_link: "https://www.python.org/",
         },
-        msoffice: {
-            name: "msoffice",
-            home_page_link: "https://www.microsoft.com/en/",
-        },
-        bootstrap: {
-            name: "bootstrap",
-            home_page_link: "https://getbootstrap.com/",
-        },
-        mongo: {
-            name: "mongo",
-            home_page_link: "https://www.mongodb.com/",
-        },
-        googleos: {
-            name: "googleos",
-            home_page_link: "https://opensource.google/",
-        },
-        hive: {
-            name: "hive",
-            home_page_link: "https://hive.apache.org/",
+        js: {
+            name: "js",
+            home_page_link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
         },
         html: {
             name: "html",
@@ -32,49 +24,14 @@ const data = {
             name: "css",
             home_page_link: "https://developer.mozilla.org/en-US/docs/Learn/css",
         },
-        js: {
-            name: "js",
-            home_page_link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+
+        bootstrap: {
+            name: "bootstrap",
+            home_page_link: "https://getbootstrap.com/",
         },
-        sql: {
-            name: "sql",
-            home_page_link: "https://www.mysql.com/",
-        },
-        aws: {
-            name: "aws",
-            home_page_link: "https://aws.amazon.com/",
-        },
-        hadoop: {
-            name: "hadoop",
-            home_page_link: "https://hadoop.apache.org/",
-        },
-        spark: {
-            name: "spark",
-            home_page_link: "https://spark.apache.org/",
-        },
-        hbase: {
-            name: "hbase",
-            home_page_link: "https://hbase.apache.org/",
-        },
-        flume: {
-            name: "flume",
-            home_page_link: "https://flume.apache.org/",
-        },
-        sqoop: {
-            name: "sqoop",
-            home_page_link: "https://attic.apache.org/",
-        },
-        kafka: {
-            name: "kafka",
-            home_page_link: "https://kafka.apache.org/",
-        },
-        airflow: {
-            name: "airflow",
-            home_page_link: "https://airflow.apache.org/",
-        },
-        redshift: {
-            name: "redshift",
-            home_page_link: "https://aws.amazon.com/pm/redshift/",
+        tailwind: {
+            name: "tailwind",
+            home_page_link: "https://tailwindcss.com/",
         },
         figma: {
             name: "figma",
@@ -84,6 +41,96 @@ const data = {
             name: "react",
             home_page_link: "https://react.dev/",
         },
+
+        mongo: {
+            name: "mongo",
+            home_page_link: "https://www.mongodb.com/",
+        },
+        sql: {
+            name: "sql",
+            home_page_link: "https://www.mysql.com/",
+        },
+        googleos: {
+            name: "googleos",
+            home_page_link: "https://opensource.google/",
+        },
+        appSheets: {
+            name: "appSheets",
+            home_page_link: "https://about.appsheet.com/home/",
+        },
+        msoffice: {
+            name: "msoffice",
+            home_page_link: "https://www.microsoft.com/en/",
+        },
+        ec2: {
+            name: "ec2",
+            home_page_link: "https://aws.amazon.com/ec2/",
+        },
+        emr: {
+            name: "emr",
+            home_page_link: "https://aws.amazon.com/emr/",
+        },
+        cognito: {
+            name: "cognito",
+            home_page_link: "https://aws.amazon.com/pm/cognito/",
+        },
+        apiGateway: {
+            name: "apiGateway",
+            home_page_link: "https://aws.amazon.com/api-gateway/",
+        },
+
+        cloudWatch: {
+            name: "cloudWatch",
+            home_page_link: "https://aws.amazon.com/cloudwatch/",
+        },
+
+        eventBridge: {
+            name: "eventBridge",
+            home_page_link: "https://aws.amazon.com/eventbridge/",
+        },
+
+        Lambda: {
+            name: "lambda",
+            home_page_link: "https://aws.amazon.com/lambda/",
+        },
+        // hive: {
+        //     name: "hive",
+        //     home_page_link: "https://hive.apache.org/",
+        // },
+        // hadoop: {
+        //     name: "hadoop",
+        //     home_page_link: "https://hadoop.apache.org/",
+        // },
+        // spark: {
+        //     name: "spark",
+        //     home_page_link: "https://spark.apache.org/",
+        // },
+        // hbase: {
+        //     name: "hbase",
+        //     home_page_link: "https://hbase.apache.org/",
+        // },
+        // flume: {
+        //     name: "flume",
+        //     home_page_link: "https://flume.apache.org/",
+        // },
+        // sqoop: {
+        //     name: "sqoop",
+        //     home_page_link: "https://attic.apache.org/",
+        // },
+        // kafka: {
+        //     name: "kafka",
+        //     home_page_link: "https://kafka.apache.org/",
+        // },
+        // airflow: {
+        //     name: "airflow",
+        //     home_page_link: "https://airflow.apache.org/",
+        // },
+        // redshift: {
+        //     name: "redshift",
+        //     home_page_link: "https://aws.amazon.com/pm/redshift/",
+        // },
+
+
     },
     companies: {
         alnisr: {
