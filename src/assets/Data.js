@@ -157,7 +157,7 @@ const data = {
         faceprep: {
             name: "faceprep",
             home_page_link: "https://www.faceprep.in/",
-            header: "FACE Prep  (Ed-Tech)",
+            header: "FACE Prep",
             positioon_and_timeFrame: "Product Manger, Jun 2020 - Jul 2021",
             placeOfWork: "Bengaluru, INDIA",
             content: `
