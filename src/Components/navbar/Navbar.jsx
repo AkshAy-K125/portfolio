@@ -6,7 +6,7 @@ const Navbar = () => {
   const [sidePanel, setSidePanel] = useState(false)
 
   const resumeDownload = () => {
-    window.open('https://drive.google.com/file/d/12MK0gAtCwkQyoSSt5AfTYZ3BSe5_uPRX/view?usp=sharing')
+    window.open('https://drive.google.com/file/d/1G-LiiqbEWHOKGUT31cynzXa8VqONCY1c/view?usp=sharing')
   }
 
   return (
