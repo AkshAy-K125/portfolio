@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './navbar.css'
+import data from '../../assets/Data';
 
 const Navbar = () => {
 
   const [sidePanel, setSidePanel] = useState(false)
 
   const resumeDownload = () => {
-    window.open('https://drive.google.com/file/d/1G-LiiqbEWHOKGUT31cynzXa8VqONCY1c/view?usp=sharing')
+    window.open(`https://drive.google.com/file/d/${data.resume.id}/view?usp=sharingData.resume.home_page_link`)
   }
 
   return (

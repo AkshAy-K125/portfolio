@@ -1,4 +1,7 @@
 const data = {
+    resume: {
+        id: "1jqmEHc0uEp_awkqyxZrwNE7OWmmuH-Ee"
+    },
     skills: {
         c: {
             name: "c",
@@ -137,11 +140,11 @@ const data = {
             name: "alnisr",
             home_page_link: "https://www.alnisraluminium.com/",
             header: "Al Nisr Aluminium & Metal Fabrication",
-            positioon_and_timeFrame: "IT & Operations Specialist, Oct 2021 - Present",
+            positioon_and_timeFrame: "Software Engineer, Oct 2021 - Nov 2024",
             placeOfWork: "Manama, BAHRAIN",
             content: `
             <p>
-            Working mainly as a <b>Data Engineer</b> with a passion for designing and implementing effective data-driven tools for optimal and efficient workflows
+            Working mainly as a <b>Software Engineer</b> with a passion for designing and implementing effective data-driven tools for optimal and efficient workflows
             </p>
             <p>
             Managing critical data and databases; <b>developing, deploying, and maintaining</b> in-house <b>Web App</b> based systems, and migrating hard data to digital environments
@@ -158,7 +161,7 @@ const data = {
             name: "faceprep",
             home_page_link: "https://www.faceprep.in/",
             header: "FACE Prep",
-            positioon_and_timeFrame: "Product Manger, Jun 2020 - Jul 2021",
+            positioon_and_timeFrame: "Instructional Design Engineer, Jun 2020 - Jul 2021",
             placeOfWork: "Bengaluru, INDIA",
             content: `
             <p>          
