@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './navbar.css'
-import data from '../../assets/Data';
+import { getResumeID } from '../../util';
 
 const Navbar = () => {
 
   const [sidePanel, setSidePanel] = useState(false)
+  const [resumeID, setResumeID] = useState(null)
+
+  useEffect(() => {
+    getResumeID().then(id => setResumeID(id))
+    console.log(resumeID)
+
+  }, [])
 
   const resumeDownload = () => {
-    window.open(`https://drive.google.com/file/d/${data.resume.id}/view?usp=sharingData.resume.home_page_link`)
+    window.open(`https://drive.google.com/file/d/${resumeID}/view?usp=sharing`)
   }
 
   return (

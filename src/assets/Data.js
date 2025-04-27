@@ -1,7 +1,4 @@
 const data = {
-    resume: {
-        id: "1nTGlUVfivKllOUiIupmT9Pg3pJtpx_qF"
-    },
     skills: {
         c: {
             name: "c",
