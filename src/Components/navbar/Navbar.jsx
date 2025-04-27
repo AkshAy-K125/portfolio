@@ -11,7 +11,7 @@ const Navbar = () => {
     getResumeID().then(id => setResumeID(id))
     console.log(resumeID)
 
-  }, [])
+  }, [resumeID])
 
   const resumeDownload = () => {
     window.open(`https://drive.google.com/file/d/${resumeID}/view?usp=sharing`)
