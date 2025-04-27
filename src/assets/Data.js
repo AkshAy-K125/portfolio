@@ -1,6 +1,6 @@
 const data = {
     resume: {
-        id: "1jqmEHc0uEp_awkqyxZrwNE7OWmmuH-Ee"
+        id: "1nTGlUVfivKllOUiIupmT9Pg3pJtpx_qF"
     },
     skills: {
         c: {
@@ -180,7 +180,7 @@ const data = {
             name: "face",
             home_page_link: "https://www.facebook.com/focusacademy/",
             header: "Focus Academy",
-            positioon_and_timeFrame: "Quality Assurance Manager, Jul 2017 - Jun 2020",
+            positioon_and_timeFrame: "Training/Quality Assurance Manager, Jul 2017 - Jun 2020",
             placeOfWork: "Pune, INDIA",
             content: `
             <p> 
