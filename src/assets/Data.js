@@ -133,6 +133,27 @@ const data = {
 
     },
     companies: {
+        flipkart: {
+            name: "flipkart",
+            home_page_link: "https://www.flipkart.com/",
+            header: "Flipkart India Pvt Ltd",
+            positioon_and_timeFrame: "Application Engineer, July 2025 - Present",
+            placeOfWork: "Bengaluru, INDIA",
+            content: `
+            <p>
+            Working as an <b>Application Engineer 2</b> at Flipkart, specializing in software development, system ownership, and collaborative problem-solving with a focus on building robust, scalable applications
+            </p>
+            <p>
+            Leading end-to-end application development lifecycle including <b>design, implementation, testing, and deployment</b> of new features and enhancements to existing systems. Proactively monitoring application health and performance to ensure high availability and reliability.
+            </p>
+            <p> 
+            Expertise in <b> Python, distributed systems, microservices architecture, and API design</b>. Proficient with <b>SQL/NoSQL databases, Linux/Unix environments, CI/CD pipelines, and cloud platforms (AWS)</b>.
+            </p>
+            <p>
+            Strong focus on troubleshooting and debugging complex technical problems in production environments. Collaborating with cross-functional teams including product management and quality assurance, while mentoring junior engineers and contributing to knowledge sharing initiatives. Successfully implemented process improvements and automation to enhance development and operational workflows.
+            </p>
+            `,
+        },
         alnisr: {
             name: "alnisr",
             home_page_link: "https://www.alnisraluminium.com/",
