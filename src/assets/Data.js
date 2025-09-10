@@ -158,7 +158,7 @@ const data = {
             name: "alnisr",
             home_page_link: "https://www.alnisraluminium.com/",
             header: "Al Nisr Aluminium & Metal Fabrication",
-            positioon_and_timeFrame: "Software Engineer, Oct 2021 - Nov 2024",
+            positioon_and_timeFrame: "IT & Operations Specialist, Oct 2021 - Nov 2024",
             placeOfWork: "Manama, BAHRAIN",
             content: `
             <p>
