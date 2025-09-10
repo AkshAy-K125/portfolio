@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './navbar.css'
 import { getResumeID } from '../../util';
 
@@ -22,7 +23,7 @@ const Navbar = () => {
       <div className='nav_Container'>
         <div className='navBar'>
           <ul className='nav_items'>
-            <li className='hover-underline-animation'><a href="#home">Home</a></li>
+            <li className='hover-underline-animation'><Link to="/">Home</Link></li>
             <li className='hover-underline-animation'><a href="#About">About</a></li>
             <li className='hover-underline-animation'><a href="#contact">Contact</a></li>
             <li className='hover-underline-animation'><a href="#home" onClick={resumeDownload}>Resume</a></li>
@@ -48,7 +49,7 @@ const Navbar = () => {
               </div>
               <div>
                 <ul className='burger_nav_items'>
-                  <li className='hover-underline-animation'><a href="#home" onClick={() => setSidePanel(false)}>Home</a></li>
+                  <li className='hover-underline-animation'><Link to="/" onClick={() => setSidePanel(false)}>Home</Link></li>
                   <li className='hover-underline-animation'><a href="#About" onClick={() => setSidePanel(false)}>About</a></li>
                   <li className='hover-underline-animation'><a href="#contact" onClick={() => setSidePanel(false)}>Contact</a></li>
                 </ul>
