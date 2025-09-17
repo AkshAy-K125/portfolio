@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.quote-container {
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  padding: 40px 20px;
+}
+
+.quote-document {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header styles */
+.quote-header {
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.company-logo {
+  margin-bottom: 20px;
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.quote-info {
+  text-align: right;
+  font-size: 14px;
+  width: 100%;
+}
+
+.quote-title {
+  font-size: 24px;
+  color: #333;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+/* Section styles */
+.section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  color: #007bff;
+  font-weight: 500;
+  margin-top: 40px;
+  font-size: 20px;
+}
+
+/* Override global h2 styles from App.css */
+.section-heading::before,
+.section-heading::after {
+  display: none !important;
+}
+
+
+/* Table styles */
+.table-container {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+.quote-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.quote-table th,
+.quote-table td {
+  text-align: left;
+  padding: 12px;
+}
+
+.quote-table th {
+  background-color: #f8f9fa;
+  font-weight: 500;
+  color: #555;
+}
+
+.total-label {
+  text-align: right;
+}
+
+/* List styles */
+.revisions-list {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.revisions-list li {
+  margin-bottom: 8px;
+}
+
+.terms-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.terms-list li {
+  background: #f8f9fa;
+  border-left: 4px solid #007bff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* Signature section */
+.signature-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.signature-block {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.signature-line {
+  margin-top: 60px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive design */
+@media (min-width: 640px) {
+  .quote-header {
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .company-logo {
+    margin-bottom: 0;
+  }
+  
+  .quote-info {
+    width: auto;
+  }
+  
+  .signature-block {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .quote-document {
+    padding: 20px;
+  }
+  
+  .signature-block {
+    width: 100%;
+  }
+}

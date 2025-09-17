@@ -5,6 +5,7 @@ import './App.css';
 import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube } from './Components';
 import { ContentHolder } from './container';
 import ProtectedNisr from './Components/quotations/ProtectedNisr';
+import NisrQuote from './Components/quotations/NisrQuote/NisrQuote';
 
 
 // Home component for the main portfolio page
@@ -57,6 +58,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quotations" element={<Navigate to="/" replace />} />
         <Route path="/quotations/Nisr" element={<ProtectedNisr />} />
+        <Route path="/quotations/NisrQuote" element={<NisrQuote />} />
       </Routes>
     </Router>
   );
