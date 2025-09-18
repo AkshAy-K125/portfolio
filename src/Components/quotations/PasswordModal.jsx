@@ -12,8 +12,7 @@ const PasswordModal = ({ isOpen, onClose, onSuccess }) => {
     setError('');
 
     try {
-      // Get password from environment variable with fallback
-      const correctPassword = process.env.REACT_APP_QUOTATIONS_PASSWORD || 'nisr2024';
+      const correctPassword = process.env.REACT_APP_QUOTATIONS_PASSWORD ;
       
       if (password === correctPassword) {
         onSuccess();
