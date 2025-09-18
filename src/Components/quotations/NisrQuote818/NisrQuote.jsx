@@ -61,6 +61,11 @@ const NisrQuote = () => {
                   <td>2</td>
                 </tr>
                 <tr>
+                  <td>New Formatted Pdf report</td>
+                  <td>Creation of a new formatted pdf report</td>
+                  <td>2</td>
+                </tr>
+                <tr>
                   <td>Tax Toggle</td>
                   <td>Implementation of a toggle function to switch tax calculations on and off for LPOs.</td>
                   <td>1</td>
@@ -69,7 +74,7 @@ const NisrQuote = () => {
               <tfoot>
                 <tr>
                   <th colSpan="2" className="total-label">Total Estimated Effort</th>
-                  <td><strong>9 Days</strong></td>
+                  <td><strong>11 Days</strong></td>
                 </tr>
               </tfoot>
             </table>
@@ -100,7 +105,7 @@ const NisrQuote = () => {
         <div className="section">
           <h2 className="section-heading">Terms & Conditions</h2>
           <ul className="terms-list">
-            <li><strong>1. Payment Schedule:</strong> This is a fixed-fee project based on the total estimated effort. The total cost is <strong>153 BHD</strong>. An advance payment of <strong>40% (61.20 BHD)</strong> is required to initiate the project, with the remaining <strong>60% (91.80 BHD)</strong> due upon project completion.</li>
+            <li><strong>1. Payment Schedule:</strong> This is a fixed-fee project based on the total estimated effort. The total cost is <strong>187 BHD</strong>. An advance payment of <strong>40% (74.80 BHD)</strong> is required to initiate the project, with the remaining <strong>60% (112.20 BHD)</strong> due upon project completion.</li>
             <li><strong>2. Late Payments:</strong> Delayed payments may impact the project timeline. Future projects with a history of late payments will require a 100% advance payment.</li>
             <li><strong>3. Project Ownership & Confidentiality:</strong> Upon final payment, the client will have full ownership of the final design and code. We agree to a mutual, non-disclosure agreement (NDA) to ensure all shared information remains private and confidential.</li>
             <li><strong>4. Cancellation Policy:</strong> If the project is canceled by the client after work has begun, the initial 40% advance payment is non-refundable.</li>
