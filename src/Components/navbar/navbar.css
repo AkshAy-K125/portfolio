@@ -19,14 +19,14 @@
     justify-content: space-around;
 }
 
-li {
+.nav_items li {
     font-family: sans-serif;
     text-decoration: none;
     list-style-type: none;
     font-size: 18px;
 }
 
-li:hover {
+.nav_items li:hover {
     color: white;
     cursor: pointer;
 }
