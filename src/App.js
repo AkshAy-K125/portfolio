@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
-import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube } from './Components';
+import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818 } from './Components';
 import { ContentHolder } from './container';
-import ProtectedNisr from './Components/quotations/ProtectedNisr';
-import NisrQuote from './Components/quotations/NisrQuote818/NisrQuote';
 
 
 // Home component for the main portfolio page
@@ -57,8 +55,24 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/quotations" element={<Navigate to="/" replace />} />
-        <Route path="/quotations/Nisr" element={<ProtectedNisr />} />
-        <Route path="/quotations/NisrQuote818" element={<NisrQuote />} />
+        <Route path="/quotations/Nisr" element={
+          <Auth 
+            authKey="nisr_quotation_auth" 
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_PASSWORD}
+          >
+            <Nisr />
+          </Auth>
+        } />
+        <Route path="/quotations/NisrQuote818" element={
+          <Auth 
+            authKey="nisr_quote_818_auth" 
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_QUOTE_818_PASSWORD}
+          >
+            <NisrQuote818 />
+          </Auth>
+        } />
       </Routes>
     </Router>
   );

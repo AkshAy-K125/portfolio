@@ -9,4 +9,7 @@ export { default as Projects } from './projects/Projects';
 export { default as WovenStar } from './wovenStar/WovenStar';
 export { default as SpinOffCube } from './spinOffCube/SpinOffCube';
 export { default as ColorSpin } from './colorSpin/ColorSpin';
+export { default as Auth } from './Auth/Auth';
+export { default as Nisr } from './quotations/Nisr/Nisr';
+export { default as NisrQuote818 } from './quotations/NisrQuote818/NisrQuote818';
 

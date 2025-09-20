@@ -1,7 +1,7 @@
 import React from 'react';
 import './nisrquote.css';
 
-const NisrQuote = () => {
+const NisrQuote818 = () => {
   return (
     <div className="quote-container">
       <div className="quote-document">
@@ -16,7 +16,7 @@ const NisrQuote = () => {
           <div className="quote-info">
             <h1 className="quote-title">Project Proposal & Quote</h1>
             <p><strong>Quote #:</strong> Q-2025-818</p>
-            <p><strong>Date:</strong> September 17, 2025</p>
+            <p><strong>Date:</strong> September 20, 2025</p>
           </div>
         </header>
 
@@ -61,8 +61,8 @@ const NisrQuote = () => {
                   <td>2</td>
                 </tr>
                 <tr>
-                  <td>New Formatted Pdf report</td>
-                  <td>Creation of a new formatted pdf report</td>
+                  <td>New Formatted report</td>
+                  <td>Creation of a new formatted pdf/csv report</td>
                   <td>2</td>
                 </tr>
                 <tr>
@@ -131,4 +131,4 @@ const NisrQuote = () => {
   );
 };
 
-export default NisrQuote;
+export default NisrQuote818;

@@ -2,6 +2,7 @@ import React from 'react';
 import './nisr.css';
 
 const Nisr = () => {
+  console.log(process.env.REACT_APP_NISR_PASSWORD)
   return (
     <div className="container">
 

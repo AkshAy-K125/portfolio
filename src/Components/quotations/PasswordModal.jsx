@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './passwordModal.css';
 
-const PasswordModal = ({ isOpen, onClose, onSuccess }) => {
+const PasswordModal = ({ isOpen, onClose, onSuccess, correctPassword }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -12,8 +12,6 @@ const PasswordModal = ({ isOpen, onClose, onSuccess }) => {
     setError('');
 
     try {
-      const correctPassword = process.env.REACT_APP_QUOTATIONS_PASSWORD ;
-      
       if (password === correctPassword) {
         onSuccess();
         setPassword('');
