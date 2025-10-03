@@ -12,4 +12,5 @@ export { default as ColorSpin } from './colorSpin/ColorSpin';
 export { default as Auth } from './Auth/Auth';
 export { default as Nisr } from './quotations/Nisr/Nisr';
 export { default as NisrQuote818 } from './quotations/NisrQuote818/NisrQuote818';
+export { default as NisrQuote818TimeLine } from './quotations/NisrQuote818TimeLine/NisrQuote818TimeLine';
 

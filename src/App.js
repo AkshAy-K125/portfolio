@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
-import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818 } from './Components';
+import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818, NisrQuote818TimeLine } from './Components';
 import { ContentHolder } from './container';
 
 
@@ -71,6 +71,15 @@ function App() {
             password={process.env.REACT_APP_NISR_QUOTE_818_PASSWORD}
           >
             <NisrQuote818 />
+          </Auth>
+        } />
+        <Route path="/quotations/NisrQuote818TimeLine" element={
+          <Auth 
+            authKey="nisr_quote_818_timeline_auth" 
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_QUOTE_818_TIMELINE_PASSWORD}
+          >
+            <NisrQuote818TimeLine />
           </Auth>
         } />
       </Routes>
