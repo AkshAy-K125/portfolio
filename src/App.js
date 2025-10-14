@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
-import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818, NisrQuote818TimeLine } from './Components';
+import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818, NisrQuote818TimeLine, NisrQuote818FinalReport } from './Components';
 import { ContentHolder } from './container';
 
 
@@ -56,8 +56,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/quotations" element={<Navigate to="/" replace />} />
         <Route path="/quotations/Nisr" element={
-          <Auth 
-            authKey="nisr_quotation_auth" 
+          <Auth
+            authKey="nisr_quotation_auth"
             redirectPath="/"
             password={process.env.REACT_APP_NISR_PASSWORD}
           >
@@ -65,8 +65,8 @@ function App() {
           </Auth>
         } />
         <Route path="/quotations/NisrQuote818" element={
-          <Auth 
-            authKey="nisr_quote_818_auth" 
+          <Auth
+            authKey="nisr_quote_818_auth"
             redirectPath="/"
             password={process.env.REACT_APP_NISR_QUOTE_818_PASSWORD}
           >
@@ -74,12 +74,21 @@ function App() {
           </Auth>
         } />
         <Route path="/quotations/NisrQuote818TimeLine" element={
-          <Auth 
-            authKey="nisr_quote_818_timeline_auth" 
+          <Auth
+            authKey="nisr_quote_818_timeline_auth"
             redirectPath="/"
             password={process.env.REACT_APP_NISR_QUOTE_818_TIMELINE_PASSWORD}
           >
             <NisrQuote818TimeLine />
+          </Auth>
+        } />
+        <Route path="/quotations/NisrQuote818FinalReport" element={
+          <Auth
+            authKey="nisr_quote_818_final_report_auth"
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_QUOTE_818_FINAL_REPORT_PASSWORD}
+          >
+            <NisrQuote818FinalReport />
           </Auth>
         } />
       </Routes>
