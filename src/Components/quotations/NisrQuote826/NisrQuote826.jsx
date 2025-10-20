@@ -57,17 +57,17 @@ const NisrQuote826 = () => {
                 </tr>
                 <tr>
                   <td>Inhouse & Tally Data Review</td>
-                  <td>Comprehensive review and integration of inhouse data and Tally data systems</td>
+                  <td>Comprehensive review and integration of inhouse data and Tally data systems <em>(effort may increase based on data complexity)</em></td>
                   <td>3</td>
                 </tr>
                 <tr>
                   <td>Odoo Data Requirements</td>
-                  <td>Analysis and implementation of Odoo data requirements for seamless integration</td>
+                  <td>Analysis and implementation of Odoo data requirements for seamless integration <em>(effort may increase based on data complexity)</em></td>
                   <td>1</td>
                 </tr>
                 <tr>
                   <td>Data Cleaning & Reformatting</td>
-                  <td>Data cleaning and reformatting processes for improved data quality and standardization</td>
+                  <td>Data cleaning and reformatting processes for improved data quality and standardization <em>(effort may increase based on data complexity)</em></td>
                   <td>4</td>
                 </tr>
               </tbody>
@@ -166,7 +166,7 @@ const NisrQuote826 = () => {
         <div className="section">
           <h2 className="section-heading">Terms & Conditions</h2>
           <ul className="terms-list">
-            <li><strong>1. Payment Schedule:</strong> This is a fixed-fee project based on the total estimated effort. The total cost is <strong>204 BHD</strong> (12 days × 17 BHD). An advance payment of <strong>40% (81.60 BHD)</strong> is required to initiate the project, with the remaining <strong>60% (122.40 BHD)</strong> due upon project completion.</li>
+            <li><strong>1. Payment Schedule:</strong> This is a fixed-fee project based on the total estimated effort. The total cost is <strong>204 BHD</strong> (12 days × 17 BHD). An advance payment of <strong>40% (81.60 BHD)</strong> is required to initiate the project, with the remaining <strong>60% (122.40 BHD)</strong> due upon project completion. <strong>Note:</strong> Additional charges may apply if the data complexity for Inhouse & Tally Data Review, Odoo Data Requirements, or Data Cleaning & Reformatting exceeds the estimated effort. Any additional work will be billed at the same daily rate of 17 BHD and will be discussed and approved before proceeding.</li>
             <li><strong>2. Late Payments:</strong> Delayed payments may impact the project timeline. Future projects with a history of late payments will require a 100% advance payment.</li>
             <li><strong>3. Project Ownership & Confidentiality:</strong> Upon final payment, the client will have full ownership of the final design and code. We agree to a mutual, non-disclosure agreement (NDA) to ensure all shared information remains private and confidential.</li>
             <li><strong>4. Cancellation Policy:</strong> If the project is canceled by the client after work has begun, the initial 40% advance payment is non-refundable.</li>
