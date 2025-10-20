@@ -100,6 +100,15 @@ function App() {
             <NisrQuote818FinalReport />
           </Auth>
         } />
+        <Route path="/quotations/NisrQuote826" element={ 
+          <Auth
+            authKey="nisr_quote_826_auth"
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_QUOTE_826_PASSWORD}
+          >
+            <NisrQuote826 />
+          </Auth>
+        } />
       </Routes>
     </Router>
   );
