@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
-import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818, NisrQuote818TimeLine, NisrQuote826, NisrQuote818FinalReport } from './Components';
+import { Navbar, Intro, Contact, Footer, ParticleBg, ColorSpin, WovenStar, SpinOffCube, Auth, Nisr, NisrQuote818, NisrQuote818TimeLine, NisrQuote826, NisrQuote837, NisrQuote818FinalReport } from './Components';
 import { ContentHolder } from './container';
 
 
@@ -91,6 +91,15 @@ function App() {
             <NisrQuote826 />
           </Auth>
         } />
+        <Route path="/quotations/NisrQuote837" element={
+          <Auth 
+            authKey="nisr_quote_837_auth" 
+            redirectPath="/"
+            password={process.env.REACT_APP_NISR_QUOTE_837_PASSWORD}
+          >
+            <NisrQuote837 />
+          </Auth>
+        } />
         <Route path="/quotations/NisrQuote818FinalReport" element={
           <Auth
             authKey="nisr_quote_818_final_report_auth"
@@ -98,15 +107,6 @@ function App() {
             password={process.env.REACT_APP_NISR_QUOTE_818_FINAL_REPORT_PASSWORD}
           >
             <NisrQuote818FinalReport />
-          </Auth>
-        } />
-        <Route path="/quotations/NisrQuote826" element={ 
-          <Auth
-            authKey="nisr_quote_826_auth"
-            redirectPath="/"
-            password={process.env.REACT_APP_NISR_QUOTE_826_PASSWORD}
-          >
-            <NisrQuote826 />
           </Auth>
         } />
       </Routes>
