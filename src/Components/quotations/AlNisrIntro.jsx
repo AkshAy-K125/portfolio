@@ -27,7 +27,7 @@ const AlNisrIntro = () => {
               <p>It has been a pleasure to work with the organization over the past few years.</p>
               <p>I am grateful for the knowledge and guidance provided by the Board Members and the wider team.</p>
               <p>Regarding the freelance opportunity, I currently have commitments in the Indian market.</p>
-              <p>My standard daily rate is <strong>₹4500</strong>, which is approximately <strong>20 BHD</strong>. With an estimated commitment of four days per week,</p>
+              <p>My standard daily rate is <strong>₹4500</strong>; which is approximately <strong>20 BHD</strong>. With an estimated commitment of four days per week,</p>
               <p> I have submitted a proposal that reflects this valuation. As a gesture of goodwill and to show my respect, </p>
               <p>I have also included a discounted rate. I am open to negotiation and would be happy to discuss any aspect of the proposal further.</p>
               <p>I hope this message finds you well. Thank you for considering me for your software development needs.</p>
