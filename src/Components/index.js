@@ -17,5 +17,6 @@ export { default as NisrQuote826 } from './quotations/NisrQuote826/NisrQuote826'
 export { default as NisrQuote826TimeLine } from './quotations/NisrQuote826TimeLine/NisrQuote826TimeLine';
 export { default as NisrQuote837 } from './quotations/NisrQuote837/NisrQuote837';
 export { default as NisrQuote916 } from './quotations/NisrQuote916/NisrQuote916';
+export { default as NisrQuote917 } from './quotations/NisrQuote917/NisrQuote917';
 export { default as NisrQuote818FinalReport } from './quotations/NisrQuote818FinalReport/NisrQuote818FinalReport';
 
