@@ -69,7 +69,10 @@ const NisrQuote916 = () => {
             <li><strong>Minor Revisions:</strong> Small adjustments to the user interface, such as moving a component on a page.</li>
             <li><strong>Major Revisions:</strong> Significant changes to core functionality, such as adding a new filter or a PDF generation feature to a report.</li>
           </ul> */}
-          <p>Any additional changes will require a new quote. No revisions are possible after the project is formally completed and signed off.</p>
+          <ul className="revisions-list">
+            <li><p>Any additional changes will require a new quote. No revisions are possible after the project is formally completed and signed off.</p></li>
+            <li><p> This quote includes the work pertaining to the major enterprise level changes made by google open source and any further future scope of google into the project not included in this refactor</p></li>
+          </ul>
         </div>
         
         <div className="section">
