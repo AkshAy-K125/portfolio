@@ -34,7 +34,7 @@ const NisrQuote916 = () => {
 
         <div className="section">
           <h2 className="section-heading">Project Scope & Deliverables</h2>
-          <p>This quote covers the development and delivery of the following new feature:</p>
+          <p>This quote covers the development and delivery of the following:</p>
           <div className="table-container">
             <table className="quote-table">
               <thead>
