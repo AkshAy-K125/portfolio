@@ -39,7 +39,7 @@ const NisrQuote916 = () => {
             <table className="quote-table">
               <thead>
                 <tr>
-                  <th>Feature</th>
+                  <th>Task in hand</th>
                   <th>Description</th>
                   <th>Estimated Effort (Days)</th>
                 </tr>
@@ -64,11 +64,11 @@ const NisrQuote916 = () => {
 
         <div className="section">
           <h2 className="section-heading">Revisions</h2>
-          <p>This quote includes **three (3) minor revisions** and **one (1) major revision** to ensure the final product meets your expectations.</p>
+          {/* <p>This quote includes **three (3) minor revisions** and **one (1) major revision** to ensure the final product meets your expectations.</p>
           <ul className="revisions-list">
             <li><strong>Minor Revisions:</strong> Small adjustments to the user interface, such as moving a component on a page.</li>
             <li><strong>Major Revisions:</strong> Significant changes to core functionality, such as adding a new filter or a PDF generation feature to a report.</li>
-          </ul>
+          </ul> */}
           <p>Any additional changes will require a new quote. No revisions are possible after the project is formally completed and signed off.</p>
         </div>
         
@@ -77,10 +77,10 @@ const NisrQuote916 = () => {
           <p>This quote is for development services only and does not include any long-term maintenance or support for the features once they have been delivered and accepted.</p>
         </div>
 
-        <div className="section">
+        {/* <div className="section">
           <h2 className="section-heading">Project Timeline</h2>
           <p>The project timeline will be established in a detailed plan once this quote is officially approved and the advance payment is received.</p>
-        </div>
+        </div> */}
 
         <div className="section">
           <h2 className="section-heading">Terms & Conditions</h2>
