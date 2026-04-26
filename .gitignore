@@ -10,6 +10,13 @@
 
 # production
 /build
+/dist
+
+# typescript build info
+*.tsbuildinfo
+
+# claude code worktrees / local config
+/.claude
 
 # misc
 .DS_Store
