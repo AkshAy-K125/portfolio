@@ -50,11 +50,6 @@
   }
 }
 
-/* Quotation pages opt out of Tailwind's reset — they ship their own CSS. */
-.quotation-root,
-.quotation-root * {
-  all: revert;
-}
 
 /* Smooth theme transitions. */
 html {

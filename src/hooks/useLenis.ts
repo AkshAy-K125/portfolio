@@ -1,9 +1,10 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import { useReducedMotion } from './useReducedMotion';
 
 export function useLenis() {
   const reduced = useReducedMotion();
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
     if (reduced) return;
@@ -12,6 +13,7 @@ export function useLenis() {
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
     });
+    lenisRef.current = lenis;
 
     let raf = 0;
     const tick = (time: number) => {
@@ -23,6 +25,9 @@ export function useLenis() {
     return () => {
       cancelAnimationFrame(raf);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, [reduced]);
+
+  return lenisRef;
 }

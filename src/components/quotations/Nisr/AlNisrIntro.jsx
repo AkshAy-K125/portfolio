@@ -1,5 +1,5 @@
 import React from 'react';
-import './quotations.css';
+
 
 const AlNisrIntro = () => {
   return (
