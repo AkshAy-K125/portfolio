@@ -1,0 +1,71 @@
+/* Wider document to fit the large module table */
+.quote-document--wide {
+  max-width: 960px;
+}
+
+.appscript-table {
+  min-width: 680px;
+  font-size: 0.875rem;
+}
+
+.appscript-table th,
+.appscript-table td {
+  padding: 9px 12px;
+}
+
+/* Dim the modules that don't need a revamp */
+.appscript-table .row-muted td {
+  color: #9a93ac;
+}
+
+.appscript-table .dim {
+  color: #b3acc4;
+}
+
+/* Priority pills */
+.prio {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.prio-high   { background: #fee2e2; color: #991b1b; }
+.prio-medium { background: #fef3c7; color: #92400e; }
+.prio-low    { background: #f1f0f5; color: #6b6480; }
+.prio-na     { background: transparent; color: #b3acc4; }
+
+/* Revamp Yes/No */
+.revamp-yes {
+  color: #6d28d9;
+  font-weight: 600;
+}
+
+.revamp-no {
+  color: #9a93ac;
+}
+
+/* Reference link */
+.ref-link {
+  color: #6d28d9;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ref-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .appscript-table {
+    font-size: 0.8rem;
+  }
+  .appscript-table th,
+  .appscript-table td {
+    padding: 7px 9px;
+  }
+}

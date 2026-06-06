@@ -77,4 +77,17 @@ export const NISR_QUOTES = [
     hasTimeline: false,
     hasReport: false,
   },
+  {
+    number: '1080',
+    date: 'Jun 6, 2026',
+    shortTitle: 'Full AppScript Platform Revamp',
+    description: 'Comprehensive revamp of all high & medium priority AppScript modules — Invoice, Job Order, Site Reports, Podium, Warranty, Tool Tracker, and more',
+    days: 73,
+    rate: 18,
+    total: 1314,
+    status: 'active',
+    paymentStatus: 'pending',
+    hasTimeline: false,
+    hasReport: false,
+  },
 ];
