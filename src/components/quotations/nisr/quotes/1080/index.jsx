@@ -293,9 +293,6 @@ const NisrQuote1080 = () => {
           <h2 className="section-heading">2. Modifications Post Deadline</h2>
           <p>
             These <strong>{postModules.length} modules</strong> will be rebuilt from scratch after the deadline.
-            As a full rebuild, the estimated code size is roughly <strong>2× the current</strong> module and the
-            effort is estimated at <strong>3× the baseline</strong>. The total includes <strong>1 additional
-            day</strong> for overall integration &amp; handover.
           </p>
           <ModuleTable rows={postModules} footerDays={postDays} />
         </div>
