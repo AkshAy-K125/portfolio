@@ -15,6 +15,7 @@ const L = {
   jobSummary:   'https://script.google.com/macros/s/AKfycby_E3NRkkZKaDkXGyhjE_Gczd_aBlFMZkhsvjaE8gea58Lir9PjEK-xBJAmIzG-WBJR/exec',
   login:        'https://script.google.com/macros/s/AKfycbyXFQMpWqy8yigcWlbwiS3kOfb7YMg8g2rgjEM7bNee0HLt2FmJfzwhfj_caDlFGkrT/exec',
   matPrice:     'https://script.google.com/macros/s/AKfycbyN_zkoNTfJHKGpiPBxdyR15Cy9Vehj7pyLlTa7b2OX8r8ArudVpbPX06t7rUENQC1_/exec',
+  opmm:         'https://script.google.com/macros/s/AKfycbzO20EaeBlleRbV8dqs02kMVJD6U--s1AFMwsBEKr44SLuMPERMRNFUeYQOWVKeAnoZ/exec',
   podium:       'https://script.google.com/macros/s/AKfycbyPUx_Ne4qJg-rX6iDIJwnBxUbQX7Lfzb6AXYoKnq2CqJmTkuY2_PMwp17GBdxE2Qnc/exec',
   powder:       'https://script.google.com/macros/s/AKfycbzW2AQvlEXU5qYA1aglRk4IZxXZg_kAottm-JVIpXt1Ft7nMAcijmkHdWKVQsXAhljnIw/exec',
   siteReports:  'https://script.google.com/macros/s/AKfycbxi4zKccVDZff68SLsADLUUDKKgGQkQr9mZJRL_o3rJr3ybOkYHK0AqIjjyEuwqK1_N/exec',
@@ -69,7 +70,7 @@ const MODULES = [
   { name: 'Material request Reference Office',   priority: 'Low',    lines: '-',      revamp: false, },
   { name: 'Notification Panel',                  priority: 'Low',    lines: '-',      revamp: false, },
   { name: 'Notification panel Contents',         priority: 'Low',    lines: '-',      revamp: false, },
-  { name: 'OPMM',                                priority: 'Low',    lines: '-',      revamp: false, },
+  { name: 'OPMM',                                priority: 'High',   lines: '~5000+', revamp: true, link: L.opmm },
   { name: 'OT webApp Bulk - Entry',              priority: 'Low',    lines: '-',      revamp: false, },
   { name: 'OT webApp Entry',                     priority: 'Low',    lines: '-',      revamp: false, },
   { name: 'Payroll Dashboard',                   priority: 'Low',    lines: '-',      revamp: false, },
@@ -96,15 +97,131 @@ const priorityClass = (p) => {
 const linesToNum = (lines) => parseInt(String(lines).replace(/[^0-9]/g, ''), 10) || 0;
 const computeDays = (m) => (m.revamp ? Math.max(1, Math.round(linesToNum(m.lines) / 1000)) : 0);
 
+// Table 1 — achievable before the 15th June Google deadline.
+const BEFORE_DEADLINE_ORDER = [
+  'Podium 3.0',
+  'Login',
+  'Job Order',
+  'Invoice 2.0',
+  'LPO',
+];
+
+// Table 2 — modifications to be built from scratch after the deadline.
+const POST_DEADLINE_ORDER = [
+  'Site Reports',
+  'Site Reports - On Ground',
+  'Job Summary & Analysis',
+  'Job Order - various users',
+  'Job Summary & Analysis - various users',
+  'Warranty 2.0',
+  'Inv Summary',
+  'Site Reports - various users',
+  'Vehicle Details 2.0',
+  'Vehicle Details 2.0 - various users',
+  'Employee Management Dashboard',
+  'OPMM',
+];
+
+// Descoped modules — to be deleted after Google's deadline & warning period.
+// Anything not in MANUAL_ORDER is descoped; this array sets the display order
+// for the named ones, the rest follow by priority.
+const DESCOPED_ORDER = [
+  'Podium 3.0 - various users',
+  'Invoice 2.0 - various users',
+  'Warranty 2.0 - various users',
+  'Complaint Entry',
+  'Complaint Entry - various users',
+  'LPO - various users',
+  'Material Selling Price',
+  'Powder Coating',
+  'Powder Coating - various users',
+  'Tool Tracker',
+  'Tool Tracker - various users',
+  'Supplier DB & Entry',
+];
+
+const DEADLINE_INTERMEDIATE_LINK = 'https://developers.google.com/public-key-infrastructure/updates/august2025-intermediate-update';
+const DEADLINE_FINAL_LINK = 'https://www.google.com/search?q=google+deadline+for+trust+services+root+CAs+and+ECDSA+certficate&rlz=1C5GCCM_en&oq=google+deadline+for+trust+services+root+CAs+and+ECDSA+certficate&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEJNDcyNzJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8';
+
+const refCell = (m) => {
+  if (m.link) return <a href={m.link} target="_blank" rel="noopener noreferrer" className="ref-link">View ↗</a>;
+  if (m.note) return <span className="dim">{m.note}</span>;
+  return <span className="dim">—</span>;
+};
+
+const ModuleTable = ({ rows, footerDays, muted }) => (
+  <div className="table-container">
+    <table className={`quote-table appscript-table${muted ? ' descoped-table' : ''}`}>
+      <thead>
+        <tr>
+          <th>AppScript Module</th>
+          <th>Priority</th>
+          <th>Code Lines</th>
+          <th>Reference</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((m, i) => (
+          <tr key={i}>
+            <td>{m.name}</td>
+            <td><span className={priorityClass(m.priority)}>{m.priority}</span></td>
+            <td>{m.lines}</td>
+            <td>{refCell(m)}</td>
+          </tr>
+        ))}
+      </tbody>
+      {footerDays != null && (
+        <tfoot>
+          <tr>
+            <th colSpan="3" className="total-label">Total Estimated Effort</th>
+            <td><strong>{footerDays} Days</strong></td>
+          </tr>
+        </tfoot>
+      )}
+    </table>
+  </div>
+);
+
+const orderBy = (list, names, fallbackByPriority = false) => {
+  const idx = (m) => {
+    const i = names.indexOf(m.name);
+    return i === -1 ? Infinity : i;
+  };
+  return [...list].sort(
+    (a, b) =>
+      idx(a) - idx(b) ||
+      (fallbackByPriority ? PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority] : 0),
+  );
+};
+
 const NisrQuote1080 = () => {
-  const modules = [...MODULES]
-    .map((m) => ({ ...m, days: computeDays(m) }))
-    .sort((a, b) => PRIORITY_ORDER[a.priority] - PRIORITY_ORDER[b.priority]);
-  const totalDays = modules.reduce((s, m) => s + m.days, 0);
-  const totalCost = totalDays * RATE;
-  const advance   = (totalCost * 0.6).toFixed(2);
-  const remaining = (totalCost * 0.4).toFixed(2);
-  const revampCount = modules.filter(m => m.revamp).length;
+  const withDays = MODULES.map((m) => ({ ...m, days: computeDays(m) }));
+  const isIn = (names) => (m) => names.includes(m.name);
+
+  const beforeModules = orderBy(withDays.filter(isIn(BEFORE_DEADLINE_ORDER)), BEFORE_DEADLINE_ORDER);
+  // Post-deadline modules are rebuilt from scratch — add 5 days each.
+  const POST_REBUILD_EXTRA = 5;
+  const postModules = orderBy(withDays.filter(isIn(POST_DEADLINE_ORDER)), POST_DEADLINE_ORDER)
+    .map((m) => ({ ...m, days: m.days + POST_REBUILD_EXTRA }));
+  const descopedModules = orderBy(
+    withDays.filter((m) => !BEFORE_DEADLINE_ORDER.includes(m.name) && !POST_DEADLINE_ORDER.includes(m.name)),
+    DESCOPED_ORDER,
+    true,
+  );
+
+  const beforeDays = beforeModules.reduce((s, m) => s + m.days, 0);
+  const postDays   = postModules.reduce((s, m) => s + m.days, 0);
+  const totalDays  = beforeDays + postDays;
+
+  // Before-deadline work is billed as a separate standalone payment.
+  const beforeCost = beforeDays * RATE;
+  // Post-deadline work is billed progressively (50% / 25% / 25%).
+  const postCost   = postDays * RATE;
+  const totalCost  = beforeCost + postCost;
+  const postAdvance   = (postCost * 0.5).toFixed(2);  // upfront
+  const postMilestone = (postCost * 0.25).toFixed(2); // after one month
+  const postFinal     = (postCost * 0.25).toFixed(2); // on completion
+  const moduleCount = beforeModules.length + postModules.length;
 
   return (
     <div className="quote-container">
@@ -140,50 +257,52 @@ const NisrQuote1080 = () => {
         <div className="section">
           <h2 className="section-heading">Project Scope & Deliverables</h2>
           <p>
-            This quote covers the revamp of <strong>{revampCount} modules</strong> across the platform. The
-            table below lists every AppScript module, its priority, approximate code size, whether a revamp is
-            required, and the estimated effort. Reference links to the current deployments are provided where
-            available.
+            This quote covers the revamp of <strong>{moduleCount} modules</strong> across the platform, grouped
+            by what can be delivered before the deadline versus what will be rebuilt afterwards. Reference links
+            to the current deployments are provided where available.
           </p>
-          <div className="table-container">
-            <table className="quote-table appscript-table">
-              <thead>
-                <tr>
-                  <th>AppScript Module</th>
-                  <th>Priority</th>
-                  <th>Code Lines</th>
-                  <th>Revamp</th>
-                  <th>Days</th>
-                  <th>Reference</th>
-                </tr>
-              </thead>
-              <tbody>
-                {modules.map((m, i) => (
-                  <tr key={i} className={m.revamp ? '' : 'row-muted'}>
-                    <td>{m.name}</td>
-                    <td><span className={priorityClass(m.priority)}>{m.priority}</span></td>
-                    <td>{m.lines}</td>
-                    <td>{m.revamp ? <span className="revamp-yes">Yes</span> : <span className="revamp-no">No</span>}</td>
-                    <td>{m.days > 0 ? m.days : <span className="dim">—</span>}</td>
-                    <td>
-                      {m.link
-                        ? <a href={m.link} target="_blank" rel="noopener noreferrer" className="ref-link">View ↗</a>
-                        : m.note
-                          ? <span className="dim">{m.note}</span>
-                          : <span className="dim">—</span>}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th colSpan="4" className="total-label">Total Estimated Effort</th>
-                  <td colSpan="2"><strong>{totalDays} Days</strong></td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
+          <p className="deadline-note">
+            <strong>Note:</strong> Considering the tentative deadline to be 15th of June for the below quote
+            {' '}(
+            <a href={DEADLINE_INTERMEDIATE_LINK} target="_blank" rel="noopener noreferrer" className="ref-link">
+              Actual deadline reference from Google
+            </a>
+            {' '}is{' '}
+            <a href={DEADLINE_FINAL_LINK} target="_blank" rel="noopener noreferrer" className="ref-link">
+              15th June
+            </a>
+            ).
+          </p>
           <p>The daily rate for this project is <strong>{RATE} BHD</strong>.</p>
+        </div>
+
+        <div className="section">
+          <h2 className="section-heading">1. Possible Before Deadline</h2>
+          <p>
+            These <strong>{beforeModules.length} modules</strong> can be revamped and delivered before the
+            15th June deadline.
+          </p>
+          <ModuleTable rows={beforeModules} footerDays={beforeDays} />
+        </div>
+
+        <div className="section">
+          <h2 className="section-heading">2. Modifications Post Deadline</h2>
+          <p>
+            These <strong>{postModules.length} modules</strong> will be rebuilt from scratch after the deadline.
+            As a full rebuild, each module includes an additional <strong>{POST_REBUILD_EXTRA} days</strong> of
+            effort over its baseline estimate.
+          </p>
+          <ModuleTable rows={postModules} footerDays={postDays} />
+        </div>
+
+        <div className="section">
+          <h2 className="section-heading">3. Descoped Modules</h2>
+          <p>
+            The following <strong>{descopedModules.length} modules</strong> are out of scope for this quote and
+            are scheduled to be <strong>deleted after Google's deadline and warning period</strong>. They are
+            listed here for reference only and carry no development effort or cost.
+          </p>
+          <ModuleTable rows={descopedModules} muted />
         </div>
 
         <div className="section">
@@ -203,8 +322,8 @@ const NisrQuote1080 = () => {
           <h2 className="section-heading">Exclusions</h2>
           <p>
             This quote is for development services only and does not include any long-term maintenance or
-            support for the modules once they have been delivered and accepted. Modules marked as not requiring
-            a revamp are excluded from the scope and effort of this quote.
+            support for the modules once they have been delivered and accepted. The descoped modules listed
+            above are excluded from the scope, effort, and cost of this quote.
           </p>
         </div>
 
@@ -219,11 +338,17 @@ const NisrQuote1080 = () => {
         <div className="section">
           <h2 className="section-heading">Terms & Conditions</h2>
           <ul className="terms-list">
-            <li><strong>1. Payment Schedule:</strong> Total cost is <strong>{totalCost} BHD</strong> ({totalDays} days × {RATE} BHD). An advance payment of <strong>60% ({advance} BHD)</strong> is required to initiate the project, with the remaining <strong>40% ({remaining} BHD)</strong> due upon project completion.</li>
+            <li>
+              <strong>1. Payment Schedule:</strong> Total cost is <strong>{totalCost} BHD</strong> ({totalDays} days × {RATE} BHD), split into two independent billings:
+              <ul className="revisions-list" style={{ marginTop: '8px' }}>
+                <li><strong>Before-Deadline work — {beforeCost} BHD ({beforeDays} days):</strong> billed as a separate standalone payment, due in full to initiate this work ahead of the 15th June deadline.</li>
+                <li><strong>Post-Deadline work — {postCost} BHD ({postDays} days):</strong> payable progressively — <strong>50% ({postAdvance} BHD)</strong> in advance, <strong>25% ({postMilestone} BHD)</strong> after one month, and the remaining <strong>25% ({postFinal} BHD)</strong> upon completion.</li>
+              </ul>
+            </li>
             <li><strong>2. Late Payments:</strong> Delayed payments may impact the project timeline. Future projects with a history of late payments will require a 100% advance payment.</li>
             <li><strong>3. Project Ownership & Confidentiality:</strong> Upon final payment, the client will have full ownership of the final design and code. Mutual NDA applies.</li>
-            <li><strong>4. Cancellation Policy:</strong> If the project is canceled by the client after work has begun, the initial 40% advance payment is non-refundable.</li>
-            <li><strong>5. Agreement:</strong> This quote is valid for <strong>30 days</strong>. The project will begin only after we receive a signed copy of this document and the initial 40% advance payment.</li>
+            <li><strong>4. Cancellation Policy:</strong> If the project is canceled by the client after work has begun, the initial 50% advance payment is non-refundable.</li>
+            <li><strong>5. Agreement:</strong> This quote is valid for <strong>30 days</strong>. The project will begin only after we receive a signed copy of this document and the initial 50% advance payment.</li>
           </ul>
         </div>
 

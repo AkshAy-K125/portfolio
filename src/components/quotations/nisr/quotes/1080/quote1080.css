@@ -60,6 +60,36 @@
   text-decoration: underline;
 }
 
+/* Descoped table — visually de-emphasised (these modules are being removed) */
+.descoped-table th {
+  background: #f1f0f5;
+  color: #6b6480;
+  border-bottom-color: #d8d4e0;
+}
+
+.descoped-table td {
+  color: #8a8398;
+}
+
+.descoped-table .ref-link {
+  color: #8a8398;
+}
+
+.deadline-note {
+  margin: 14px 0 4px;
+  padding: 10px 14px;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #6b6480;
+  line-height: 1.55;
+}
+
+.deadline-note strong {
+  color: #92400e;
+}
+
 @media (max-width: 600px) {
   .appscript-table {
     font-size: 0.8rem;
