@@ -122,24 +122,6 @@ const POST_DEADLINE_ORDER = [
   'OPMM',
 ];
 
-// Descoped modules — to be deleted after Google's deadline & warning period.
-// Anything not in MANUAL_ORDER is descoped; this array sets the display order
-// for the named ones, the rest follow by priority.
-const DESCOPED_ORDER = [
-  'Podium 3.0 - various users',
-  'Invoice 2.0 - various users',
-  'Warranty 2.0 - various users',
-  'Complaint Entry',
-  'Complaint Entry - various users',
-  'LPO - various users',
-  'Material Selling Price',
-  'Powder Coating',
-  'Powder Coating - various users',
-  'Tool Tracker',
-  'Tool Tracker - various users',
-  'Supplier DB & Entry',
-];
-
 const DEADLINE_INTERMEDIATE_LINK = 'https://developers.google.com/public-key-infrastructure/updates/august2025-intermediate-update';
 const DEADLINE_FINAL_LINK = 'https://www.google.com/search?q=google+deadline+for+trust+services+root+CAs+and+ECDSA+certficate&rlz=1C5GCCM_en&oq=google+deadline+for+trust+services+root+CAs+and+ECDSA+certficate&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEJNDcyNzJqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8';
 
@@ -203,12 +185,6 @@ const NisrQuote1080 = () => {
   const POST_REBUILD_EXTRA = 5;
   const postModules = orderBy(withDays.filter(isIn(POST_DEADLINE_ORDER)), POST_DEADLINE_ORDER)
     .map((m) => ({ ...m, days: m.days + POST_REBUILD_EXTRA }));
-  const descopedModules = orderBy(
-    withDays.filter((m) => !BEFORE_DEADLINE_ORDER.includes(m.name) && !POST_DEADLINE_ORDER.includes(m.name)),
-    DESCOPED_ORDER,
-    true,
-  );
-
   const beforeDays = beforeModules.reduce((s, m) => s + m.days, 0);
   const postDays   = postModules.reduce((s, m) => s + m.days, 0);
   const totalDays  = beforeDays + postDays;
@@ -295,15 +271,6 @@ const NisrQuote1080 = () => {
           <ModuleTable rows={postModules} footerDays={postDays} />
         </div>
 
-        <div className="section">
-          <h2 className="section-heading">3. Descoped Modules</h2>
-          <p>
-            The following <strong>{descopedModules.length} modules</strong> are out of scope for this quote and
-            are scheduled to be <strong>deleted after Google's deadline and warning period</strong>. They are
-            listed here for reference only and carry no development effort or cost.
-          </p>
-          <ModuleTable rows={descopedModules} muted />
-        </div>
 
         <div className="section">
           <h2 className="section-heading">Revisions</h2>
@@ -322,8 +289,7 @@ const NisrQuote1080 = () => {
           <h2 className="section-heading">Exclusions</h2>
           <p>
             This quote is for development services only and does not include any long-term maintenance or
-            support for the modules once they have been delivered and accepted. The descoped modules listed
-            above are excluded from the scope, effort, and cost of this quote.
+            support for the modules once they have been delivered and accepted.
           </p>
         </div>
 
