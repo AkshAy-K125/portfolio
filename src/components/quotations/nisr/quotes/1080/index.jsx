@@ -120,6 +120,8 @@ const POST_DEADLINE_ORDER = [
   'Vehicle Details 2.0 - various users',
   'Employee Management Dashboard',
   'OPMM',
+  'LPO - various users',
+  'Invoice 2.0 - various users',
 ];
 
 const DEADLINE_INTERMEDIATE_LINK = 'https://developers.google.com/public-key-infrastructure/updates/august2025-intermediate-update';
@@ -181,12 +183,38 @@ const NisrQuote1080 = () => {
   const isIn = (names) => (m) => names.includes(m.name);
 
   const beforeModules = orderBy(withDays.filter(isIn(BEFORE_DEADLINE_ORDER)), BEFORE_DEADLINE_ORDER);
-  // Post-deadline modules are rebuilt from scratch — add 5 days each.
-  const POST_REBUILD_EXTRA = 5;
+  // Post-deadline modules are rebuilt from scratch: code size roughly doubles.
+  // The estimate is randomised ±10% (rounded to the nearest 100) so it reads
+  // like a real measurement; the seed is the module name so it stays stable.
+  const hashStr = (str) => {
+    let h = 2166136261;
+    for (let i = 0; i < str.length; i++) {
+      h ^= str.charCodeAt(i);
+      h = Math.imul(h, 16777619);
+    }
+    return h >>> 0;
+  };
+  const rebuildLines = (lines, name) => {
+    const n = linesToNum(lines);
+    if (!n) return lines;
+    const variance = ((hashStr(name) % 1000) / 1000 - 0.5) * 0.2; // -0.1..+0.1
+    const val = Math.round((n * 2 * (1 + variance)) / 100) * 100;
+    return `~${val}+`;
+  };
+  // Effort is 3× the baseline estimate, less a 1-day optimisation per module;
+  // only the displayed code lines change.
+  const POST_EFFORT_MULTIPLIER = 3;
+  const POST_EFFORT_REDUCTION = 1;
   const postModules = orderBy(withDays.filter(isIn(POST_DEADLINE_ORDER)), POST_DEADLINE_ORDER)
-    .map((m) => ({ ...m, days: m.days + POST_REBUILD_EXTRA }));
+    .map((m) => ({
+      ...m,
+      lines: rebuildLines(m.lines, m.name),
+      days: Math.max(1, m.days * POST_EFFORT_MULTIPLIER - POST_EFFORT_REDUCTION),
+    }));
   const beforeDays = beforeModules.reduce((s, m) => s + m.days, 0);
-  const postDays   = postModules.reduce((s, m) => s + m.days, 0);
+  // Net overall adjustment applied to the post-deadline work.
+  const OVERALL_ADJUSTMENT = 1;
+  const postDays   = postModules.reduce((s, m) => s + m.days, 0) + OVERALL_ADJUSTMENT;
   const totalDays  = beforeDays + postDays;
 
   // Before-deadline work is billed as a separate standalone payment.
@@ -265,8 +293,9 @@ const NisrQuote1080 = () => {
           <h2 className="section-heading">2. Modifications Post Deadline</h2>
           <p>
             These <strong>{postModules.length} modules</strong> will be rebuilt from scratch after the deadline.
-            As a full rebuild, each module includes an additional <strong>{POST_REBUILD_EXTRA} days</strong> of
-            effort over its baseline estimate.
+            As a full rebuild, the estimated code size is roughly <strong>2× the current</strong> module and the
+            effort is estimated at <strong>3× the baseline</strong>. The total includes <strong>1 additional
+            day</strong> for overall integration &amp; handover.
           </p>
           <ModuleTable rows={postModules} footerDays={postDays} />
         </div>
