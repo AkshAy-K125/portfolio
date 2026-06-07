@@ -4,24 +4,25 @@ import './quote1080.css';
 
 const RATE = 18;
 
-// Reference links reused across "various users" variants
+// Reference links — current deployment execution URLs (reused across "various users" variants)
 const L = {
-  complaint: 'https://script.google.com/macros/s/AKfycbxiNcFLqARQw00yy87c1QeJUmHDsu3zu4Qotn-4Ojwo2jqxnJFtr6aR7JrTnxvF7xna/exec',
-  employee:  'https://script.google.com/macros/s/AKfycbwRSFQD3MffYGub1mpW150GV6-tV1Qu1iPGwrRu7PsgBQB_257Lle4ykvYlXGHEoJOa/exec',
-  invSummary:'https://script.google.com/macros/s/AKfycbxWb9HfbF1gmX3IK0IfIHMumsO-IKYwy5EsVAwTVZOetFe1CDu9oMn319Jq6gedJXwJ/exec',
-  invoice:   'https://script.google.com/macros/s/AKfycbx8bAbNe1dFLWP0RHn3PWuChUczMg_UEGHQfEuy06LWZ-hgx7yyStg9qkmAddIqfH2T/exec',
-  jobOrder:  'https://script.google.com/macros/s/AKfycbwK8pS3NxJV1zvH7epLK4Gy0Ta6O4LjnNtH9ky7PcceU-rlOGWrFZ-Vm-Muj3p6BdfY/exec',
-  jobSummary:'https://script.google.com/macros/s/AKfycbxndVWbmwkfR02EkkTNw-y58yEWQriV6bpg_AWXXRE9ESdZhUdM4ykeD2jdSP24eEna/exec',
-  login:     'https://script.google.com/macros/s/AKfycbwR-WP_RiHamjNb4LuxHLiLQIXjc9c2FBG1m6dqdu4-_kvhsGL1wyHQgmPU97howOlEfA/exec',
-  matPrice:  'https://script.google.com/macros/s/AKfycbxnYGcXTG5cVvoo9OyhOFPNNZEPZhqpLSCKY4zA-Uf_X70yx2yF3hLO3XEM4DwbDHk67A/exec',
-  podium:    'https://script.google.com/macros/s/AKfycbxlaagW4minOjPweLxIo81tbBwD5Z6RzGxCP6e0Uz1wKfN2lG4_3eoOvdAGDx45PqFa/exec',
-  powder:    'https://script.google.com/macros/s/AKfycbx5nTf9USmycZ0rBPZKtr9loki7GqIA6MOQazuwbB9U1wGDFWWpY_MzGCRQtJM_bNFD/exec',
-  siteReports:'https://script.google.com/macros/s/AKfycbyoR9htwWuSJ4oSBhdKNShx7pBzET-RG65rTrOP7uFS0pFvE21TdBqdeaq0aq169xul/exec',
-  siteReportsOG:'https://script.google.com/macros/s/AKfycbxTt9mb0vJQChyIQX8-C7DT4493CbglfL9jXgArh3c-qos_Dl9S8NJPBfAEveDKnZ1c/exec',
-  supplier:  'https://script.google.com/macros/s/AKfycbxIcaBKUnDpYAxyi2OCqWVvu_i5goyGNaab5sJrHocNHLNZKFae1y4vITZnFvFqC7Gc/exec',
-  toolTracker:'https://script.google.com/macros/s/AKfycbyN6_L7hcNVrEMvfvsJrleqq3uW-Dbv3oYs7QB7bj3dzP4vG5F6K3TORJF1Smq7Oznk/exec',
-  vehicle:   'https://script.google.com/macros/s/AKfycbzWPcKfnqsgkgaBLdzYS1vND-tbEVoBdcZ4LU4qwH94STkqA5clVMIpoPAuaRiHJHzCdA/exec',
-  warranty:  'https://script.google.com/macros/s/AKfycbxVIufWf9csJxtvGN2cR0WiWcgmU7VzbUQ0cLJYa0obapWbtZvlmCSjh9vyCmF5Ye8Nmg/exec',
+  complaint:    'https://script.google.com/macros/s/AKfycbz2vB_Qm3NMm24AJYlabk9JZPA3-eQr5tj4pVzZcdfkCMSwT_TP-U1eUBcrg1UoWObIVw/exec',
+  employee:     'https://script.google.com/macros/s/AKfycbw5d0ny_Ahjg8ee-bXs3-qBZJ5yvsYfPJGnKYCr1hFmMg35s1kXyTgAiVFi4KSFrgEO/exec',
+  invSummary:   'https://script.google.com/macros/s/AKfycbySe9c64JH9ABf_OCyCjFpY1Ax6UST97VyKJvIL7ZwweKAodWalPUjV90hpaSKpdTA/exec',
+  invoice:      'https://script.google.com/macros/s/AKfycbwYC6pA2JcAidVTAb2bv1b2EUlEhtEfW_Hs1SaYaHZ1JO6oUK9cie_DPyBwCGtWj6G_/exec',
+  lpo:          'https://script.google.com/macros/s/AKfycbzYpmx1lWueD4YRZhr0HZLZQtwXOaDzWBqHsyPo8AZ5Sx9kIk0J23189WeDYw7zckeVxg/exec',
+  jobOrder:     'https://script.google.com/macros/s/AKfycbytQbthX4XVnwVj73IvXQSYdECpEKAwwiVQwzoJ3qFzjvfvdwa_7OpG5ECXKKyHufoeKg/exec',
+  jobSummary:   'https://script.google.com/macros/s/AKfycby_E3NRkkZKaDkXGyhjE_Gczd_aBlFMZkhsvjaE8gea58Lir9PjEK-xBJAmIzG-WBJR/exec',
+  login:        'https://script.google.com/macros/s/AKfycbyXFQMpWqy8yigcWlbwiS3kOfb7YMg8g2rgjEM7bNee0HLt2FmJfzwhfj_caDlFGkrT/exec',
+  matPrice:     'https://script.google.com/macros/s/AKfycbyN_zkoNTfJHKGpiPBxdyR15Cy9Vehj7pyLlTa7b2OX8r8ArudVpbPX06t7rUENQC1_/exec',
+  podium:       'https://script.google.com/macros/s/AKfycbyPUx_Ne4qJg-rX6iDIJwnBxUbQX7Lfzb6AXYoKnq2CqJmTkuY2_PMwp17GBdxE2Qnc/exec',
+  powder:       'https://script.google.com/macros/s/AKfycbzW2AQvlEXU5qYA1aglRk4IZxXZg_kAottm-JVIpXt1Ft7nMAcijmkHdWKVQsXAhljnIw/exec',
+  siteReports:  'https://script.google.com/macros/s/AKfycbxi4zKccVDZff68SLsADLUUDKKgGQkQr9mZJRL_o3rJr3ybOkYHK0AqIjjyEuwqK1_N/exec',
+  siteReportsOG:'https://script.google.com/macros/s/AKfycbxSz413ShzEzdfCQmFbsstMj9VLHL0u9NJINTAkFlr2TuSCoZNka8kacWXv6c6UabRPvw/exec',
+  supplier:     'https://script.google.com/macros/s/AKfycbxU-0tBs3hnXUAOQn_fzJeBaLCTge4w6yCUhUkskkLKWxpBPoucFZxQWUgu-tiRjkPM/exec',
+  toolTracker:  'https://script.google.com/macros/s/AKfycbz_Gjj_beEwqTvtq2ojq8lXuUMcb0XUnYKT76z9FhHgmTrfA-eG9Ysc5HjnmHEgUxJNoQ/exec',
+  vehicle:      'https://script.google.com/macros/s/AKfycbxFXvYFzwT7IlIn1HFyBaFiL_a8bRr08-YLxa5zU-bXpEvSegiZ1CY7Xhd8Lk_Ifo60fw/exec',
+  warranty:     'https://script.google.com/macros/s/AKfycbxqnrMJ-QlFVodmaTNNXWCMrXvA68rPRu0ynugw3arFTYLzx6s4AAjJ0dYX71rnD7L1Ng/exec',
 };
 
 const PRIORITY_ORDER = { High: 0, Medium: 1, Low: 2, '—': 3 };
@@ -44,8 +45,8 @@ const MODULES = [
   { name: 'Complaint Entry',                     priority: 'High',   lines: '~3000+', revamp: true,  link: L.complaint },
   { name: 'Complaint Entry - various users',     priority: 'High',   lines: '~1000+', revamp: true,  link: L.complaint },
   { name: 'Inv Summary',                         priority: 'High',   lines: '~3000+', revamp: true,  link: L.invSummary },
-  { name: 'LPO',                                 priority: 'High',   lines: '~5000+', revamp: true, link: L.invoice },
-  { name: 'LPO - various users',                 priority: 'High',   lines: '~1000+', revamp: true,  link: L.invoice },
+  { name: 'LPO',                                 priority: 'High',   lines: '~5000+', revamp: true, link: L.lpo },
+  { name: 'LPO - various users',                 priority: 'High',   lines: '~1000+', revamp: true,  link: L.lpo },
   { name: 'Material Selling Price',              priority: 'High',   lines: '~2000+', revamp: true,  link: L.matPrice },
   { name: 'Powder Coating',                      priority: 'High',   lines: '~3000+', revamp: true,  link: L.powder },
   { name: 'Powder Coating - various users',      priority: 'High',   lines: '~1000+', revamp: true,  link: L.powder },
