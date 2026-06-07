@@ -287,6 +287,12 @@ const NisrQuote1080 = () => {
             15th June deadline.
           </p>
           <ModuleTable rows={beforeModules} footerDays={beforeDays} />
+          <p className="deadline-note">
+            <strong>Note:</strong> Although the estimated effort for these modules is {beforeDays} days, I have
+            compressed the timeline to deliver them within <strong>7 days</strong> to meet the upcoming deadline.
+            Out of genuine respect for Al Nisr and our ongoing relationship, I am prioritizing this project and
+            dedicating the majority of my primary working hours to ensure its successful completion.
+          </p>
         </div>
 
         <div className="section">
