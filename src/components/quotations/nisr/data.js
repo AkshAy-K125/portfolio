@@ -88,6 +88,6 @@ export const NISR_QUOTES = [
     status: 'active',
     paymentStatus: 'pending',
     hasTimeline: false,
-    hasReport: false,
+    hasReport: true,
   },
 ];

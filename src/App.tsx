@@ -19,6 +19,7 @@ const Timeline818   = lazy(() => import('./components/quotations/nisr/timeline/8
 const Timeline826   = lazy(() => import('./components/quotations/nisr/timeline/826'));
 const Timeline1080  = lazy(() => import('./components/quotations/nisr/timeline/1080'));
 const Report818     = lazy(() => import('./components/quotations/nisr/reports/818'));
+const Report1080    = lazy(() => import('./components/quotations/nisr/reports/1080'));
 
 const env = import.meta.env as Record<string, string>;
 
@@ -39,6 +40,7 @@ const NISR_ROUTES = [
   { path: 'nisr/826/timeline', Component: Timeline826   },
   { path: 'nisr/1080/timeline', Component: Timeline1080  },
   { path: 'nisr/818/report',   Component: Report818     },
+  { path: 'nisr/1080/report',  Component: Report1080    },
 ];
 
 export default function App() {
