@@ -6,6 +6,7 @@ const BASE = '/quotations/nisr';
 
 const PAYMENT_LABEL = {
   paid:        { label: '✓ Paid',        cls: 'status-paid' },
+  partial:     { label: '◐ Partially Paid', cls: 'status-partial' },
   pending:     { label: '⏳ Pending',     cls: 'status-pending' },
   outstanding: { label: '⚠ Outstanding', cls: 'status-outstanding' },
 };

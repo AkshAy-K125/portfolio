@@ -1,0 +1,134 @@
+/* Wider document to fit the priority/module table */
+.quote-document--wide {
+  max-width: 960px;
+}
+
+.appscript-table {
+  min-width: 640px;
+  font-size: 0.875rem;
+}
+
+.appscript-table th,
+.appscript-table td {
+  padding: 9px 12px;
+}
+
+.appscript-table .dim {
+  color: #b3acc4;
+}
+
+/* Priority cell — vertically centred over its grouped module rows */
+.prio-cell {
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Priority pills */
+.prio {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.prio-high   { background: #ede9fe; color: #5b21b6; }
+
+/* Reference link */
+.ref-link {
+  color: #6d28d9;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.ref-link:hover {
+  text-decoration: underline;
+}
+
+/* Goodwill / free delivery table — green-highlighted to signal "free" */
+.bonus-table th {
+  background: #dcfce7;
+  color: #166534;
+  border-bottom-color: #86efac;
+}
+
+.bonus-table tbody td {
+  background: #f0fdf4;
+}
+
+.bonus-table tbody tr:hover td {
+  background: #dcfce7;
+}
+
+.bonus-table .ref-link {
+  color: #166534;
+}
+
+.free-footer {
+  text-align: center;
+  background: #bbf7d0 !important;
+  color: #166534 !important;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+/* Live-sample call to action (after the Note) */
+.sample-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  margin: 14px 0 4px;
+}
+
+.sample-cta-btn {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: #6d28d9;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.sample-cta-btn:hover {
+  background: #5b21b6;
+}
+
+.sample-cta-creds {
+  font-size: 0.8rem;
+  color: #6b6480;
+}
+
+.sample-cta-creds strong {
+  color: #1c1829;
+}
+
+.deadline-note {
+  margin: 14px 0 4px;
+  padding: 10px 14px;
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  color: #6b6480;
+  line-height: 1.55;
+}
+
+.deadline-note strong {
+  color: #92400e;
+}
+
+@media (max-width: 600px) {
+  .appscript-table {
+    font-size: 0.8rem;
+  }
+  .appscript-table th,
+  .appscript-table td {
+    padding: 7px 9px;
+  }
+}

@@ -283,6 +283,7 @@
 .proj-draft     { background: #f3f4f6; color: #374151; }
 
 .status-paid        { background: #d1fae5; color: #065f46; }
+.status-partial     { background: #dbeafe; color: #1e40af; }
 .status-pending     { background: #fef3c7; color: #92400e; }
 .status-outstanding { background: #fee2e2; color: #991b1b; }
 
