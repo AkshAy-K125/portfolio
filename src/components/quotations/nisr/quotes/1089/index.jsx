@@ -193,7 +193,7 @@ const NisrQuote1089 = () => {
             carefully setting aside time from my primary work to prioritise this engagement.
             <br /><br />
             <strong>Important:</strong> this crunch in the number of days is only possible if we shift to a
-            dedicated <strong>Cloudflare platform</strong> (as recommended earlier). The existing Google Apps
+            dedicated <strong>Cloudflare platform</strong>. The existing Google Apps
             Script and Sheets architecture is a tedious architecture to work on and would need considerably more
             time to deliver the same scope.
           </p>
