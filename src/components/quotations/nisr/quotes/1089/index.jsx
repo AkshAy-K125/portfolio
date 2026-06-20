@@ -5,13 +5,25 @@ import './quote1089.css';
 // Fixed-price engagement. The full post-deadline scope was originally estimated
 // at 101 days (1818 BHD at the standard 18 BHD/day rate in Q-2026-1080). The
 // committed delivery is now compressed to 70 days at no change in price.
-const TOTAL_PRICE = 1818;
-const STANDARD_RATE = 18;
 const ORIGINAL_DAYS = 101;
+const STANDARD_RATE = 18;
+const STANDARD_TOTAL = ORIGINAL_DAYS * STANDARD_RATE; // 1818 — 101 days at the standard rate
+const DISCOUNT = 45;                                  // goodwill discount
+const TOTAL_PRICE = STANDARD_TOTAL - DISCOUNT;        // 1773 — fixed payable total
 const COMMITTED_DAYS = 70;
 
 // Live sample of the proposed Cloudflare platform.
 const SAMPLE_LINK = 'https://nisr-platform.pages.dev';
+
+// Payment-schedule anchor — milestone dates are derived from project commencement.
+const PROJECT_START = new Date('2026-06-18T00:00:00');
+const addDays = (date, n) => {
+  const d = new Date(date);
+  d.setDate(d.getDate() + n);
+  return d;
+};
+const fmtDate = (date) =>
+  date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 // Reference links — current deployment execution URLs.
 const L = {
@@ -137,10 +149,12 @@ const NisrQuote1089 = () => {
   const allGroups  = [...PHASE1, ...PHASE2];
   const moduleCount = allGroups.reduce((s, g) => s + g.modules.length, 0);
 
-  // Payment schedule — fixed price, billed progressively across the two phases.
-  const advance   = (TOTAL_PRICE * 0.5).toFixed(2);  // upfront
-  const milestone = (TOTAL_PRICE * 0.25).toFixed(2); // on Phase 1 completion (~day 30)
-  const final     = (TOTAL_PRICE * 0.25).toFixed(2); // on final delivery
+  // Payment schedule — fixed price, billed in four equal 25% installments.
+  const installment = (TOTAL_PRICE * 0.25).toFixed(2);
+  const startDate   = fmtDate(PROJECT_START);
+  const date15      = fmtDate(addDays(PROJECT_START, 15));
+  const date30      = fmtDate(addDays(PROJECT_START, 30));
+  const dateDone    = fmtDate(addDays(PROJECT_START, COMMITTED_DAYS));
 
   return (
     <div className="quote-container">
@@ -187,7 +201,7 @@ const NisrQuote1089 = () => {
           </ul>
           <p className="deadline-note">
             <strong>Note:</strong> The full post-deadline scope was originally estimated at {ORIGINAL_DAYS} days
-            ({TOTAL_PRICE} BHD at the standard {STANDARD_RATE} BHD/day rate). Out of genuine respect for Al Nisr
+            ({STANDARD_TOTAL} BHD at the standard {STANDARD_RATE} BHD/day rate). Out of genuine respect for Al Nisr
             and our continued relationship, I have committed to delivering this in <strong>{COMMITTED_DAYS} days </strong>
             with <strong>no compromise to the quality of the work</strong>, by dedicating additional hours and
             carefully setting aside time from my primary work to prioritise this engagement.
@@ -288,11 +302,26 @@ const NisrQuote1089 = () => {
           <h2 className="section-heading">Terms & Conditions</h2>
           <ul className="terms-list">
             <li>
-              <strong>1. Payment Schedule:</strong> This is a fixed-price engagement of <strong>{TOTAL_PRICE} BHD</strong> for the {moduleCount} prioritised modules, billed progressively across the two delivery phases:
+              <strong>1. Payment Schedule:</strong> A fixed-price engagement for the {moduleCount} prioritised modules, billed in four equal installments of <strong>25% ({installment} BHD)</strong> each. Milestone dates assume project commencement on <strong>{startDate}</strong>.
+              <div className="price-summary">
+                <div className="price-cell">
+                  <span className="price-cell-label">Standard Cost</span>
+                  <span className="price-strike">{STANDARD_TOTAL} BHD</span>
+                </div>
+                <div className="price-cell price-cell-discount">
+                  <span className="price-cell-label">Discount</span>
+                  <span className="price-discount-amt">− {DISCOUNT} BHD</span>
+                </div>
+                <div className="price-cell price-cell-payable">
+                  <span className="price-cell-label">Payable Total</span>
+                  <span className="price-payable-amt">{TOTAL_PRICE} BHD</span>
+                </div>
+              </div>
               <ul className="revisions-list" style={{ marginTop: '8px' }}>
-                <li><strong>50% ({advance} BHD)</strong> in advance, to initiate the work.</li>
-                <li><strong>25% ({milestone} BHD)</strong> on completion of Phase 1 (Priorities 1 &amp; 2, ~day {phase1Days}).</li>
-                <li><strong>25% ({final} BHD)</strong> on final delivery of Phase 2.</li>
+                <li><strong>25% ({installment} BHD)</strong> in advance, to initiate the work.</li>
+                <li><strong>25% ({installment} BHD)</strong> after 15 days — <strong>{date15}</strong>.</li>
+                <li><strong>25% ({installment} BHD)</strong> after 30 days (Phase 1 completion) — <strong>{date30}</strong>.</li>
+                <li><strong>25% ({installment} BHD)</strong> on completion of the project — <strong>{dateDone}</strong>.</li>
               </ul>
             </li>
             <li><strong>2. Goodwill Delivery:</strong> The complimentary modules are provided free of charge and carry no payment obligation. They are delivered on a best-effort basis after the prioritised {totalDays}-day scope is complete.</li>

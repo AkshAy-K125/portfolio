@@ -75,6 +75,74 @@
   letter-spacing: 0.03em;
 }
 
+/* Discount / price summary in the payment schedule */
+.price-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+
+.price-cell {
+  flex: 1 1 140px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e4dfff;
+}
+
+.price-cell-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b6480;
+  font-weight: 700;
+}
+
+.price-strike {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #8a8398;
+  text-decoration: line-through;
+}
+
+/* The discount cell is the visual hero */
+.price-cell-discount {
+  background: #dcfce7;
+  border-color: #4ade80;
+  box-shadow: 0 0 0 1px #4ade80;
+}
+
+.price-cell-discount .price-cell-label {
+  color: #166534;
+}
+
+.price-discount-amt {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #15803d;
+  white-space: nowrap;
+}
+
+.price-cell-payable {
+  background: #ede9fe;
+  border-color: #c4b5fd;
+}
+
+.price-cell-payable .price-cell-label {
+  color: #5b21b6;
+}
+
+.price-payable-amt {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #5b21b6;
+  white-space: nowrap;
+}
+
 /* Live-sample call to action (after the Note) */
 .sample-cta {
   display: flex;
