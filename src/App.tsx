@@ -19,6 +19,7 @@ const Quote1089     = lazy(() => import('./components/quotations/nisr/quotes/108
 const Timeline818   = lazy(() => import('./components/quotations/nisr/timeline/818'));
 const Timeline826   = lazy(() => import('./components/quotations/nisr/timeline/826'));
 const Timeline1080  = lazy(() => import('./components/quotations/nisr/timeline/1080'));
+const Timeline1089  = lazy(() => import('./components/quotations/nisr/timeline/1089'));
 const Report818     = lazy(() => import('./components/quotations/nisr/reports/818'));
 const Report1080    = lazy(() => import('./components/quotations/nisr/reports/1080'));
 
@@ -41,6 +42,7 @@ const NISR_ROUTES = [
   { path: 'nisr/818/timeline', Component: Timeline818   },
   { path: 'nisr/826/timeline', Component: Timeline826   },
   { path: 'nisr/1080/timeline', Component: Timeline1080  },
+  { path: 'nisr/1089/timeline', Component: Timeline1089  },
   { path: 'nisr/818/report',   Component: Report818     },
   { path: 'nisr/1080/report',  Component: Report1080    },
 ];

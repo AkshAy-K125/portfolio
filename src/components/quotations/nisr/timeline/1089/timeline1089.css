@@ -1,0 +1,96 @@
+/* Quote 1089 timeline — extends the shared timeline.css with phase/priority
+   tagging, a legend, and a distinct milestone treatment. */
+
+.timeline-meta {
+  margin: 0.75rem 0 0;
+  color: #6b6480;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Legend under the header */
+.timeline-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.tl-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1c1829;
+}
+
+.tl-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tl-dot--p1 { background: #6d28d9; }
+.tl-dot--p2 { background: #ea580c; }
+.tl-dot--ms { background: #15803d; }
+
+/* Tag row inside a module badge */
+.tl-badge-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.65rem;
+}
+
+.tl-tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 9999px;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.tl-tag--effort {
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* Phase-tinted badges: Phase 1 violet, Phase 2 orange */
+.timeline-item.is-phase1 .timeline-week-badge {
+  background: linear-gradient(135deg, #6d28d9, #7c3aed);
+}
+
+.timeline-item.is-phase2 .timeline-week-badge {
+  background: linear-gradient(135deg, #ea580c, #f97316);
+}
+
+.timeline-item.is-phase1 .icon-circle { border-color: #6d28d9; }
+.timeline-item.is-phase2 .icon-circle { border-color: #ea580c; }
+
+/* Milestone cards — green, tighter, visually set apart from module work */
+.timeline-item.is-milestone .timeline-week-badge {
+  background: linear-gradient(135deg, #15803d, #22c55e);
+}
+
+.timeline-item.is-milestone .timeline-content {
+  border-color: #86efac;
+  box-shadow: 0 8px 32px rgba(21, 128, 61, 0.22);
+}
+
+.icon-circle--milestone {
+  border-color: #15803d !important;
+  background: #f0fdf4;
+}
+
+@media (max-width: 480px) {
+  .timeline-meta { font-size: 0.85rem; padding: 0 0.5rem; }
+  .timeline-legend { gap: 0.4rem 1rem; }
+  .tl-legend-item { font-size: 0.78rem; }
+}

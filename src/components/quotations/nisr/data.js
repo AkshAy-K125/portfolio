@@ -100,7 +100,7 @@ export const NISR_QUOTES = [
     total: 1773,
     status: 'active',
     paymentStatus: 'pending',
-    hasTimeline: false,
+    hasTimeline: true,
     hasReport: false,
   },
 ];
